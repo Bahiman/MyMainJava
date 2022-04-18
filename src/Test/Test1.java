@@ -6,5 +6,6 @@ public class Test1 {
         System.out.println("What does the fox sayf");
         System.out.println("Nigers");
         System.out.println("Suckers");
+        System.out.println("Nigers sck");
     }
 }
