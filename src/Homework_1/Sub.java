@@ -16,6 +16,14 @@ public class Sub {
     }
 
     public static void task_two(){
+
+        System.out.println("Enter the character");
+
+        Scanner character = new Scanner(System.in);
+
+        String character_ = character.nextLine();
+
+
         System.out.println("Enter the height");
 
         Scanner height_ = new Scanner(System.in);
@@ -30,7 +38,7 @@ public class Sub {
 
         for(int a = 0; a < height; a++){
             for(int b = 0; b < width; b++){
-                System.out.print('*');
+                System.out.print(character_);
             }
             System.out.println();
         }
