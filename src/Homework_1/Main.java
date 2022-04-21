@@ -12,5 +12,7 @@ public class Main {
 
         Info info_one = new Info("name", "33", "Hasan Salmani");
         System.out.println(info_one);
+
+
     }
 }
