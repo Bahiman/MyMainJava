@@ -31,16 +31,16 @@ public class Sub {
 
         Scanner height_ = new Scanner(System.in);
 
-        int height = Integer.parseInt(height_.nextLine());
+        long height = Integer.parseInt(height_.nextLine());
 
         System.out.println("Enter the width");
 
         Scanner width_ = new Scanner(System.in);
 
-        int width = Integer.parseInt(width_.nextLine());
+        long width = Integer.parseInt(width_.nextLine());
 
-        for (int a = 0; a < height; a++) {
-            for (int b = 0; b < width; b++) {
+        for (long a = 0; a < height; a++) {
+            for (long b = 0; b < width; b++) {
                 System.out.print(character_);
             }
             System.out.println();

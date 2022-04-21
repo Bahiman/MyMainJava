@@ -17,6 +17,8 @@ public class Main {
 
         System.out.println(retro);
 
+        int[] niger = {5,8,9};
+
 
     }
 }
