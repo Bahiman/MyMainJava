@@ -13,6 +13,10 @@ public class Main {
         Info info_one = new Info("name", "33", "Hasan Salmani");
         System.out.println(info_one);
 
+        double retro = Math.pow(9, 3);
+
+        System.out.println(retro);
+
 
     }
 }

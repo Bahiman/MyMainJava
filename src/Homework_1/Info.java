@@ -12,5 +12,7 @@ public class Info {
         this.namee = namee;
         this.age = age;
         this.address = address;
-    }
+   }
+
+
 }
