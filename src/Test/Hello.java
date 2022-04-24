@@ -6,6 +6,6 @@ public class Hello {
 
         System.out.println(sike);
 
-
+        int random = (int) (Math.random() *200 + 30);
     }
 }
