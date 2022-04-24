@@ -5,16 +5,16 @@ public class Homework_2 {
 
         int[] arr = new int[10];
 
-        for(int i = 0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             arr[i] = niger();
             System.out.println(arr[i] + " Testing");
-            if(arr[i] > 100){
+            if (arr[i] > 100) {
                 System.out.println(arr[i] + " Is higher than hundred");
             }
         }
     }
 
-    private static int niger(){
-        return (int) (Math.random() *200 + 10);
+    private static int niger() {
+        return (int) (Math.random() * 200 + 10);
     }
 }
