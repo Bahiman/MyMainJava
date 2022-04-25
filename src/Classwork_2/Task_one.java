@@ -1,10 +1,11 @@
 package Classwork_2;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Task_one {
     public static void main(String[] args) {
-        int[] array = new int[20];
+        Integer[] array = new Integer[20];
 
         for (int a = 0; a < array.length; a++) {
             array[a] = niger();
@@ -19,9 +20,15 @@ public class Task_one {
         }
 
 
-        System.out.println(max);
-        System.out.println(Arrays.toString(array));
+//        System.out.println(max);
+//
+//        Arrays.stream(array).sorted();
+//
+//        System.out.println(Arrays.toString(array));
 
+        Arrays.sort(array, Collections.reverseOrder());
+
+        System.out.println(Arrays.toString(array));
 
     }
 
