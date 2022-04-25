@@ -17,15 +17,18 @@ public class Homework_3 {
 
         String number_one = scanner.nextLine();
 
-        if (number_one.toLowerCase(Locale.ROOT) == "stopped") {
+        if (number_one.toLowerCase(Locale.ROOT).equals("stopped")) {
             stopped = true;
+
         } else {
             noel.add(Integer.valueOf(number_one));
+            System.out.println(noel.get(0));
+            System.out.println(noel.stream().toArray());
         }
 
         String number_two = scanner.nextLine();
 
-        if (number_two.toLowerCase(Locale.ROOT) == "stopped") {
+        if (number_two.toLowerCase(Locale.ROOT).equals("stopped")) {
             stopped = true;
         } else {
             noel.add(Integer.valueOf(number_two));
@@ -33,7 +36,7 @@ public class Homework_3 {
 
         String number_three = scanner.nextLine();
 
-        if (number_three.toLowerCase(Locale.ROOT) == "stopped") {
+        if (number_three.toLowerCase(Locale.ROOT).equals("stopped")) {
             stopped = true;
         } else {
             noel.add(Integer.valueOf(number_three));
@@ -41,7 +44,7 @@ public class Homework_3 {
 
         String number_four = scanner.nextLine();
 
-        if (number_one.toLowerCase(Locale.ROOT) == "stopped") {
+        if (number_one.toLowerCase(Locale.ROOT).equals("stopped")) {
             stopped = true;
         } else {
             noel.add(Integer.valueOf(number_four));
@@ -49,7 +52,7 @@ public class Homework_3 {
 
         String number_five = scanner.nextLine();
 
-        if (number_five.toLowerCase(Locale.ROOT) == "stopped") {
+        if (number_five.toLowerCase(Locale.ROOT).equals("stopped")) {
             stopped = true;
         } else {
             noel.add(Integer.valueOf(number_five));
@@ -64,5 +67,7 @@ public class Homework_3 {
                 System.out.println(noel.get(b));
             }
         }
+
+        System.out.println("Niger");
     }
 }
