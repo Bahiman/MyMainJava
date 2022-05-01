@@ -15,6 +15,7 @@ public class Part_2 {
             if (num_one % i != 0) {
                 System.out.println("The number " + num_one + " is not divisible by " + i);
             } else {
+                System.out.println("The number " + num_one + " is  divisible by " + i);
                 the_one.add(i);
             }
         }
