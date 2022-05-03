@@ -37,5 +37,6 @@ public class Homework_4_part_two {
         for (String nigers : user_array.values()) {
             System.out.println(nigers);
         }
+
     }
 }
