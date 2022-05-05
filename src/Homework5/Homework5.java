@@ -1,5 +1,7 @@
 package Homework5;
 
+import kotlin.jvm.internal.SpreadBuilder;
+
 import java.util.*;
 
 public class Homework5 {
@@ -31,6 +33,7 @@ public class Homework5 {
                     String name = input.next();
 
                     do {
+                        System.out.println("Name added");
                         humanNames.add(name);
 
                         first_name_exists = true;
@@ -38,11 +41,17 @@ public class Homework5 {
 
                     Iterator<String> iterator = humanNames.iterator();
 
+
                     while (iterator.hasNext()) {
+//                        System.out.println("Loop activated");
                         for (int i = 0; i < humanBase.size(); i++) {
+                            System.out.println("Loop activated part two");
                             String iter__ = String.valueOf(iterator.next());
                             if (Objects.equals(iter__, name)) {
+                                System.out.println("Same name was alread");
                                 was_before = true;
+                            } else {
+                                System.out.println("Something went wrong");
                             }
                         }
                     }
