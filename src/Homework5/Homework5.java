@@ -32,29 +32,12 @@ public class Homework5 {
 
                     String name = input.next();
 
-                    do {
-                        System.out.println("Name added");
+                    if (humanNames.contains(name)) {
+                        was_before = true;
+                    } else {
                         humanNames.add(name);
-
-                        first_name_exists = true;
-                    } while (!first_name_exists);
-
-                    Iterator<String> iterator = humanNames.iterator();
-
-
-                    while (iterator.hasNext()) {
-//                        System.out.println("Loop activated");
-                        for (int i = 0; i < humanBase.size(); i++) {
-                            System.out.println("Loop activated part two");
-                            String iter__ = String.valueOf(iterator.next());
-                            if (Objects.equals(iter__, name)) {
-                                System.out.println("Same name was alread");
-                                was_before = true;
-                            } else {
-                                System.out.println("Something went wrong");
-                            }
-                        }
                     }
+
 
                     if (was_before) {
                         System.out.println("Human with this name already exists");
