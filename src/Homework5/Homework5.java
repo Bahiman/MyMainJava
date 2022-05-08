@@ -12,16 +12,15 @@ public class Homework5 {
 
         Set<String> humanNames = new HashSet<>();
 
+        Scanner checker = new Scanner(System.in);
 
         boolean is_on = true;
 
         boolean was_before = false;
 
-        boolean first_name_exists = false;
-
         while (is_on) {
 
-            System.out.println("Add(1); Stop(2), Show(3)");
+            System.out.println("Add(1); Stop(2), Show(3) Find(4)");
 
             int choice = input.nextInt();
 
@@ -79,11 +78,62 @@ public class Homework5 {
                     break;
 
 
+                case 4:
+                    System.out.println("Enter the name to check");
+
+                    String nameCheck = checker.next();
+
+                    System.out.println("Enter birth date to check");
+
+                    String birthCheck = checker.next();
+
+                    System.out.println("Enter the country");
+
+                    String countryCheck = checker.next();
+
+                    System.out.println("Enter the salary to check");
+
+                    int salaryCheck = checker.nextInt();
+
+                    Human new_human = new Human(
+                            nameCheck,
+                            birthCheck,
+                            countryCheck,
+                            salaryCheck
+                    );
+
+                    if (check(new_human, humanBase)) {
+                        System.out.println("Human found");
+                    } else {
+                        System.out.println("Human not found");
+                    }
+
+                    break;
+
                 default:
                     System.out.println("What else did u write?");
                     break;
             }
         }
 
+    }
+
+    public static boolean check(Human humanToCheck, Set<Human> humanSet) {
+        boolean result = false;
+
+        for (Human h : humanSet) {
+            if (
+                    h.getName().equals(humanToCheck.getName()) &&
+                            h.getBirthday().equals(humanToCheck.getBirthday()) &&
+                            h.getSalary().equals(humanToCheck.getSalary()) &&
+                            h.getCountry().equals(humanToCheck.getCountry()) &&
+                            Objects.equals(h.getSalary(), humanToCheck.getSalary())
+            ) {
+                result = true;
+                break;
+            }
+        }
+
+        return result;
     }
 }
