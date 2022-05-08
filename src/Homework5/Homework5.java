@@ -18,6 +18,9 @@ public class Homework5 {
 
         boolean was_before = false;
 
+        int similar_human_counter = 0;
+
+
         while (is_on) {
 
             System.out.println("Add(1); Stop(2), Show(3) Find(4)");
@@ -27,21 +30,26 @@ public class Homework5 {
             switch (choice) {
                 case 1:
 
-                    System.out.println("Enter the name");
+                    System.out.println("Enter the user_name");
 
-                    String name = input.next();
+                    String user_name = input.next();
 
-                    if (humanNames.contains(name)) {
+                    if (humanNames.contains(user_name)) {
                         was_before = true;
                     } else {
-                        humanNames.add(name);
+                        humanNames.add(user_name);
                     }
 
 
                     if (was_before) {
-                        System.out.println("Human with this name already exists");
+                        System.out.println("Human with this user_name already exists");
                         break;
                     } else {
+
+                        System.out.println("Enter the real name");
+
+                        String name = input.next();
+
                         System.out.println("Enter the birth date");
 
                         String birth_date = input.next();
@@ -54,7 +62,7 @@ public class Homework5 {
 
                         int salary = input.nextInt();
 
-                        Human human = new Human(name, birth_date, country, salary);
+                        Human human = new Human(user_name,name, birth_date, country, salary);
 
                         humanBase.add(human);
                     }
@@ -79,7 +87,12 @@ public class Homework5 {
 
 
                 case 4:
-                    System.out.println("Enter the name to check");
+
+                    System.out.println("Enter user_name to check");
+
+                    String userNameCheck = checker.next();
+
+                    System.out.println("Enter the real name to check");
 
                     String nameCheck = checker.next();
 
@@ -96,16 +109,20 @@ public class Homework5 {
                     int salaryCheck = checker.nextInt();
 
                     Human new_human = new Human(
+                            userNameCheck,
                             nameCheck,
                             birthCheck,
                             countryCheck,
                             salaryCheck
                     );
 
-                    if (check(new_human, humanBase)) {
-                        System.out.println("Human found");
+                    if (Finder.check(new_human, humanBase)) {
+                        System.out.println("Human found at " + new_human);
                     } else {
-                        System.out.println("Human not found");
+                        System.out.println("Human not found, but here are the humans with similar properties ");
+                        for (int i = 0; i <= similar_human_counter; i++) {
+                            System.out.println();
+                        }
                     }
 
                     break;
@@ -116,24 +133,5 @@ public class Homework5 {
             }
         }
 
-    }
-
-    public static boolean check(Human humanToCheck, Set<Human> humanSet) {
-        boolean result = false;
-
-        for (Human h : humanSet) {
-            if (
-                    h.getName().equals(humanToCheck.getName()) &&
-                            h.getBirthday().equals(humanToCheck.getBirthday()) &&
-                            h.getSalary().equals(humanToCheck.getSalary()) &&
-                            h.getCountry().equals(humanToCheck.getCountry()) &&
-                            Objects.equals(h.getSalary(), humanToCheck.getSalary())
-            ) {
-                result = true;
-                break;
-            }
-        }
-
-        return result;
     }
 }
