@@ -12,7 +12,7 @@ public class Human {
 
     private Integer salary;
 
-    public Human(String user_name, String name, String birthday, String country, int salary) {
+    public Human(String user_name, String name, String birthday, String country, Integer salary) {
         this.user_name = user_name;
         this.name = name;
         this.birthday = birthday;

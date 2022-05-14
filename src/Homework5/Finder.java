@@ -9,7 +9,7 @@ public class Finder {
 
         for (Human h : humanSet) {
             if (
-                    h.getUser_name().equals(humanToCheck.getUser_name()) &&
+//                    h.getUser_name().equals(humanToCheck.getUser_name()) &&
                             h.getName().equals(humanToCheck.getName()) &&
                             h.getBirthday().equals(humanToCheck.getBirthday()) &&
                             h.getCountry().equals(humanToCheck.getCountry()) &&

@@ -23,7 +23,7 @@ public class Homework5 {
 
         while (is_on) {
 
-            System.out.println("Add(1); Stop(2), Show(3) Find(4)");
+            System.out.println("Add(1); Stop(2), Show(3) Find(4) Delete(5)");
 
             int choice = input.nextInt();
 
@@ -88,9 +88,9 @@ public class Homework5 {
 
                 case 4:
 
-                    System.out.println("Enter user_name to check");
+//                    System.out.println("Enter user_name to check");
 
-                    String userNameCheck = checker.next();
+                    String userNameCheck = "";
 
                     System.out.println("Enter the real name to check");
 
@@ -119,10 +119,28 @@ public class Homework5 {
                     if (Finder.check(new_human, humanBase)) {
                         System.out.println("Human found at " + new_human);
                     } else {
-                        System.out.println("Human not found, but here are the humans with similar properties ");
-                        for (int i = 0; i <= similar_human_counter; i++) {
-                            System.out.println();
-                        }
+                        System.out.println("Human not found");
+                    }
+
+                    break;
+
+                case 5:
+                    System.out.println("Enter the nick of the person you want to delete");
+
+                    String niger_ins = input.next();
+
+                    Human new_delete_human = new Human(
+                        niger_ins,
+                            "",
+                            "",
+                            "",
+                            0
+                    );
+
+                    if(Deleter.delete_check(new_delete_human, humanBase)){
+                        System.out.println("Human found");
+                    } else{
+                        System.out.println("User not found");
                     }
 
                     break;
