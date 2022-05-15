@@ -9,7 +9,11 @@ public class Homework6 {
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
 
-        File fileForPlayers = new File("C:\\Users\\bahge\\IdeaProjects\\MyMainJava\\src\\Homework6\\players.txt");
+        System.out.println("Enter the name of the file");
+
+        String name_of_the_file = input.next();
+
+        File fileForPlayers = new File("C:\\Users\\bahge\\IdeaProjects\\MyMainJava\\src\\Homework6\\" + name_of_the_file + ".txt");
 
         if(fileForPlayers.createNewFile()){
             System.out.println("File was successfully created");
@@ -34,5 +38,7 @@ public class Homework6 {
             }
 
         }
+
+        input.close();
     }
 }
