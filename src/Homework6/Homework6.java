@@ -15,20 +15,20 @@ public class Homework6 {
 
         File fileForPlayers = new File("C:\\Users\\bahge\\IdeaProjects\\MyMainJava\\src\\Homework6\\" + name_of_the_file + ".txt");
 
-        if(fileForPlayers.createNewFile()){
+        if (fileForPlayers.createNewFile()) {
             System.out.println("File was successfully created");
-        } else{
+        } else {
             System.out.println("File was already created");
         }
 
         boolean is_on = true;
 
-        while (is_on){
+        while (is_on) {
             System.out.println("Enter the name of the player:");
 
             String player = input.next();
 
-            if(player.equalsIgnoreCase("stop")){
+            if (player.equalsIgnoreCase("stop")) {
                 is_on = false;
             } else {
                 FileWriter fileWriter = new FileWriter(fileForPlayers, true);
