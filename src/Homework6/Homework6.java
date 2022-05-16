@@ -13,7 +13,7 @@ public class Homework6 {
 
         String name_of_the_file = input.next();
 
-        File fileForPlayers = new File("C:\\Users\\bahge\\IdeaProjects\\MyMainJava\\src\\Homework6\\" + name_of_the_file + ".txt");
+        File fileForPlayers = new File("src/Homework6/" + name_of_the_file + ".txt");
 
         if (fileForPlayers.createNewFile()) {
             System.out.println("File was successfully created");
@@ -40,5 +40,6 @@ public class Homework6 {
         }
 
         input.close();
+
     }
 }
