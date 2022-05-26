@@ -15,74 +15,52 @@ public class Homework11 {
             String choice = bufferedReader.readLine();
 
             switch (choice) {
-                case "+":
+                case "+" -> {
                     System.out.println("Enter the number a");
-
                     int a = Integer.parseInt(bufferedReader.readLine());
-
                     System.out.println("Enter the number b");
-
                     int b = Integer.parseInt(bufferedReader.readLine());
-
                     try {
                         add(a, b);
                     } catch (InputMismatchException ime) {
                         ime.printStackTrace();
                     }
-                    break;
-
-                case "-":
+                }
+                case "-" -> {
                     System.out.println("Enter the number a");
-
                     int aa = Integer.parseInt(bufferedReader.readLine());
-
                     System.out.println("Enter the number b");
-
                     int bb = Integer.parseInt(bufferedReader.readLine());
-
                     try {
                         subtract(aa, bb);
                     } catch (InputMismatchException ime) {
                         ime.printStackTrace();
                     }
-
-                    break;
-
-                case "/":
+                }
+                case "/" -> {
                     System.out.println("Enter the number a");
-
-                    int aaa= Integer.parseInt(bufferedReader.readLine());
-
+                    int aaa = Integer.parseInt(bufferedReader.readLine());
                     System.out.println("Enter the number b");
-
                     int bbb = Integer.parseInt(bufferedReader.readLine());
-
-                    try{
-                        divide(aaa,bbb);
-                    } catch (InputMismatchException ime){
+                    try {
+                        divide(aaa, bbb);
+                    } catch (InputMismatchException ime) {
                         ime.printStackTrace();
-                    } catch (ArithmeticException ae){
+                    } catch (ArithmeticException ae) {
                         ae.printStackTrace();
                     }
-
-                    break;
-
-                case "*":
+                }
+                case "*" -> {
                     System.out.println("Enter the number a");
-
-                    int aaaa= Integer.parseInt(bufferedReader.readLine());
-
+                    int aaaa = Integer.parseInt(bufferedReader.readLine());
                     System.out.println("Enter the number b");
-
                     int bbbb = Integer.parseInt(bufferedReader.readLine());
-
                     try {
-                        multiply(aaaa,bbbb);
-                    } catch (InputMismatchException ime){
+                        multiply(aaaa, bbbb);
+                    } catch (InputMismatchException ime) {
                         ime.printStackTrace();
                     }
-
-
+                }
             }
         }
     }
