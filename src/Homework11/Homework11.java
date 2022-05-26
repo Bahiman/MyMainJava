@@ -59,8 +59,10 @@ public class Homework11 {
 
                     try{
                         divide(aaa,bbb);
-                    } catch (InputMismatchException | ArithmeticException ime){
+                    } catch (InputMismatchException ime){
                         ime.printStackTrace();
+                    } catch (ArithmeticException ae){
+                        ae.printStackTrace();
                     }
 
                     break;
@@ -85,19 +87,19 @@ public class Homework11 {
         }
     }
 
-    public static void add(int a, int b) {
-        System.out.println(a / b);
+    public static void add(int a, int b) throws InputMismatchException{
+        System.out.println(a + b);
     }
 
-    public static void subtract(int a, int b) {
+    public static void subtract(int a, int b) throws InputMismatchException {
         System.out.println(a - b);
     }
 
-    public static void divide(int a, int b){
+    public static void divide(int a, int b) throws ArithmeticException, InputMismatchException{
         System.out.println(a/b);
     }
 
-    public static void multiply(int a, int b){
+    public static void multiply(int a, int b) throws InputMismatchException{
         System.out.println(a*b);
     }
 }
