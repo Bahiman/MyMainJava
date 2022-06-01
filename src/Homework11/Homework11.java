@@ -16,48 +16,49 @@ public class Homework11 {
 
             switch (choice) {
                 case "+" -> {
-                    System.out.println("Enter the number a");
-                    int a = Integer.parseInt(bufferedReader.readLine());
-                    System.out.println("Enter the number b");
-                    int b = Integer.parseInt(bufferedReader.readLine());
                     try {
+                        System.out.println("Enter the number a");
+                        int a = Integer.parseInt(bufferedReader.readLine());
+                        System.out.println("Enter the number b");
+                        int b = Integer.parseInt(bufferedReader.readLine());
+
                         add(a, b);
-                    } catch (InputMismatchException ime) {
+                    } catch (InputMismatchException | NumberFormatException ime) {
                         ime.printStackTrace();
                     }
                 }
                 case "-" -> {
-                    System.out.println("Enter the number a");
-                    int aa = Integer.parseInt(bufferedReader.readLine());
-                    System.out.println("Enter the number b");
-                    int bb = Integer.parseInt(bufferedReader.readLine());
+
                     try {
+                        System.out.println("Enter the number a");
+                        int aa = Integer.parseInt(bufferedReader.readLine());
+                        System.out.println("Enter the number b");
+                        int bb = Integer.parseInt(bufferedReader.readLine());
                         subtract(aa, bb);
-                    } catch (InputMismatchException ime) {
+                    } catch (InputMismatchException | NumberFormatException ime) {
                         ime.printStackTrace();
                     }
                 }
                 case "/" -> {
-                    System.out.println("Enter the number a");
-                    int aaa = Integer.parseInt(bufferedReader.readLine());
-                    System.out.println("Enter the number b");
-                    int bbb = Integer.parseInt(bufferedReader.readLine());
+
                     try {
+                        System.out.println("Enter the number a");
+                        int aaa = Integer.parseInt(bufferedReader.readLine());
+                        System.out.println("Enter the number b");
+                        int bbb = Integer.parseInt(bufferedReader.readLine());
                         divide(aaa, bbb);
-                    } catch (InputMismatchException ime) {
+                    } catch (InputMismatchException | NumberFormatException | ArithmeticException ime) {
                         ime.printStackTrace();
-                    } catch (ArithmeticException ae) {
-                        ae.printStackTrace();
                     }
                 }
                 case "*" -> {
-                    System.out.println("Enter the number a");
-                    int aaaa = Integer.parseInt(bufferedReader.readLine());
-                    System.out.println("Enter the number b");
-                    int bbbb = Integer.parseInt(bufferedReader.readLine());
                     try {
+                        System.out.println("Enter the number a");
+                        int aaaa = Integer.parseInt(bufferedReader.readLine());
+                        System.out.println("Enter the number b");
+                        int bbbb = Integer.parseInt(bufferedReader.readLine());
                         multiply(aaaa, bbbb);
-                    } catch (InputMismatchException ime) {
+                    } catch (InputMismatchException | NumberFormatException ime) {
                         ime.printStackTrace();
                     }
                 }
@@ -65,19 +66,31 @@ public class Homework11 {
         }
     }
 
-    public static void add(int a, int b) throws InputMismatchException{
-        System.out.println(a + b);
+    public static void add(int a, int b) throws InputMismatchException {
+
+        double niger = a + b;
+
+        System.out.println(niger);
     }
 
     public static void subtract(int a, int b) throws InputMismatchException {
-        System.out.println(a - b);
+
+        double niger = a - b;
+
+        System.out.println(niger);
     }
 
-    public static void divide(int a, int b) throws ArithmeticException, InputMismatchException{
-        System.out.println(a/b);
+    public static void divide(int a, int b) throws ArithmeticException, InputMismatchException {
+
+        double niger = a / b;
+
+        System.out.println(niger);
     }
 
-    public static void multiply(int a, int b) throws InputMismatchException{
-        System.out.println(a*b);
+    public static void multiply(int a, int b) throws InputMismatchException {
+
+        double niger = a * b;
+
+        System.out.println(niger);
     }
 }
