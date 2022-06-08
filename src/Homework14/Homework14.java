@@ -6,7 +6,7 @@ public class Homework14 {
     public static void main(String[] args) {
         List<Integer> niger = new ArrayList<>();
 
-        List<Integer> nigers = new ArrayList<>();
+        List<Integer> nigers;
 
         Scanner niger1 = new Scanner(System.in);
 
