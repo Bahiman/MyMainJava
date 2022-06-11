@@ -57,6 +57,7 @@ public class Homework15 {
 
                 System.out.println(x + ": ");
 
+
                 System.out.println(strings.get(counter));
 
                 counter++;
