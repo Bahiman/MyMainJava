@@ -63,7 +63,7 @@ public class JOEMAMA {
                 String country2 = scanner.next();
                 System.out.println("Enter the age");
                 int age2 = scanner.nextInt();
-                System.out.println("Ent+er the birthdate");
+                System.out.println("Enter the birthdate");
                 String birthdate = scanner.next();
                 String query3 = String.format("UPDATE `homework1`.`niggers` SET  `name` = '%s', `surname` = '%s', `country` = '%s', `age` = %d, `bday` = '%s' WHERE (`id` = %d);", name2, surname2, country2, age2, birthdate, id2);
                 statement.executeUpdate(query3);
