@@ -14,10 +14,9 @@ public class JOEMAMA {
 
         final String PASSWORD = "11111";
 
-        Connection connection = null;
+        Connection connection;
 
-        Statement statement = null;
-
+        Statement statement;
 
         connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
 
@@ -67,10 +66,12 @@ public class JOEMAMA {
                 String birthdate = scanner.next();
                 String query3 = String.format("UPDATE `homework1`.`niggers` SET  `name` = '%s', `surname` = '%s', `country` = '%s', `age` = %d, `bday` = '%s' WHERE (`id` = %d);", name2, surname2, country2, age2, birthdate, id2);
                 statement.executeUpdate(query3);
+
+
             }
+
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
-
     }
 }
 
