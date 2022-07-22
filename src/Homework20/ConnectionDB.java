@@ -16,10 +16,9 @@ public class ConnectionDB {
 
     Statement statement = null;
 
-    private Statement statement(){
-
+    private Statement statement() {
         try {
-            connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
+            connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
             statement = connection.createStatement();
         } catch (SQLException e) {
             throw new RuntimeException(e);

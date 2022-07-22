@@ -1,24 +1,36 @@
 package Homework20;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
-        ConnectionDB connectionDB = new ConnectionDB();
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+//        ConnectionDB connectionDB = new ConnectionDB();
 
-        Statement statement = connectionDB.statement;
+//        Statement statement = connectionDB.;
+
+        Class c = Class.forName("Homework20.ConnectionDB");
+
+        Object obj = c.newInstance();
+
+        Method method = c.getDeclaredMethod("statement");
+
+        method.setAccessible(true);
+
+        Statement statement = (Statement) method.invoke(obj, null);
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter ur choice: insert, delete, update, row, table");
+        System.out.print("Enter ur choice: insert, delete, update, row, table");
 
         int choice = scanner.nextInt();
 
-        switch (choice){
-            case 1 ->{
+        switch (choice) {
+            case 1 -> {
                 insertData(statement, scanner);
             }
 
@@ -63,26 +75,57 @@ public class Main {
     }
 
     public static void updateData(Statement statement, Scanner scanner) throws SQLException {
+        System.out.println("Enter the id of the row");
+
+        int id = scanner.nextInt();
+
+        System.out.println("Enter the desired country");
+
+        String country = scanner.nextLine();
+
+        System.out.println("Enter the desired city");
+
+        String city = scanner.nextLine();
+
+        String query = String.format("UPDATE `homework1`.`countries` " +
+                        "SET `country` = '%s', `city` = '%s' WHERE (`id` = '%d');",
+                country, city, id);
+    }
+
+    public static void getRow(Statement statement, Scanner scanner) throws SQLException {
         System.out.println("Enter the id");
 
         int id = scanner.nextInt();
 
-        String query = String.format("SELECT * FROM countries where `id` = %d", id);
+        String query = "SELECT * FROM countries";
 
         ResultSet resultSet = statement.executeQuery(query);
 
-        String country = resultSet.getString("country");
+        int current_num = 0;
 
-        String city = resultSet.getString("city");
+        while(resultSet.next()){
+            current_num++;
+            if(current_num == id){
+                String count = resultSet.getString("country");
+                String city =  resultSet.getString("city");
 
-        System.out.println("-------" + country + "-------" + city);
+                System.out.println(count + "-----" + city );
+            } else{
+                System.out.println(current_num);
+            }
+        }
+
     }
 
-    public static void getRow(Statement statement, Scanner scanner){
+    public static void getData(Statement statement, Scanner scanner) throws SQLException {
+        String query = "SELECT * FROM countries";
 
-    }
+        ResultSet resultSet = statement.executeQuery(query);
 
-    public static void getData(Statement statement, Scanner scanner){
-
+        while (resultSet.next()){
+            String count = resultSet.getString("country");
+            String city =  resultSet.getString("city");
+            System.out.println(count + "-----" + city );
+        }
     }
 }
