@@ -30,25 +30,18 @@ public class Main {
         int choice = scanner.nextInt();
 
         switch (choice) {
-            case 1 -> {
-                insertData(statement, scanner);
-            }
+            case 1 -> insertData(statement, scanner);
 
-            case 2 -> {
-                deleteData(statement, scanner);
-            }
+            case 2 -> deleteData(statement, scanner);
 
-            case 3 -> {
-                updateData(statement, scanner);
-            }
 
-            case 4 ->{
-                getRow(statement, scanner);
-            }
+            case 3 -> updateData(statement, scanner);
 
-            case 5 ->{
-                getData(statement, scanner);
-            }
+            case 4 -> getRow(statement, scanner);
+
+
+            case 5 -> getData(statement, scanner);
+
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
 
@@ -90,6 +83,8 @@ public class Main {
         String query = String.format("UPDATE `homework1`.`countries` " +
                         "SET `country` = '%s', `city` = '%s' WHERE (`id` = '%d');",
                 country, city, id);
+
+        statement.executeUpdate(query);
     }
 
     public static void getRow(Statement statement, Scanner scanner) throws SQLException {
@@ -105,13 +100,12 @@ public class Main {
 
         while(resultSet.next()){
             current_num++;
-            if(current_num == id){
+            if (current_num == id) {
                 String count = resultSet.getString("country");
-                String city =  resultSet.getString("city");
+                String city = resultSet.getString("city");
 
-                System.out.println(count + "-----" + city );
-            } else{
-                System.out.println(current_num);
+                System.out.println(count + "-----" + city);
+                break;
             }
         }
 
