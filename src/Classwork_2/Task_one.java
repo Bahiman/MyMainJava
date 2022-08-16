@@ -20,6 +20,7 @@ public class Task_one {
         }
 
 
+
 //        System.out.println(max);
 //
 //        Arrays.stream(array).sorted();

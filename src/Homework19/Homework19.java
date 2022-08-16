@@ -4,7 +4,7 @@ package Homework19;
 import java.sql.*;
 import java.util.Scanner;
 
-public class Homework19 {
+public class    Homework19 {
     public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
 
@@ -124,7 +124,7 @@ public class Homework19 {
                     + "--------" + surname +
                     "--------" + country + "--------" + age +
                     "--------" + bday + "--------" + city + "--------" + salary);
-        }
+       }
 
     }
 }

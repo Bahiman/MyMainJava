@@ -28,5 +28,6 @@ public class Homework_4 {
         for (int i = 0; i <= list_one.size() - 1; i++) {
             System.out.println(list_one.get(i));
         }
+
     }
 }

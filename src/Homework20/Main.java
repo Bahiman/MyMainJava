@@ -13,7 +13,7 @@ public class Main {
 
 //        Statement statement = connectionDB.;
 
-        Class c = Class.forName("Homework20.ConnectionDB");
+        Class<Object> c = (Class<Object>) Class.forName("Homework20.ConnectionDB");
 
         Object obj = c.newInstance();
 
@@ -92,24 +92,26 @@ public class Main {
 
         int id = scanner.nextInt();
 
-        String query = "SELECT * FROM countries";
+        String query = "SELECT * FROM countries where `id` = 3";
 
         ResultSet resultSet = statement.executeQuery(query);
 
-        int current_num = 0;
+//        int current_num = 0;
 
-        while(resultSet.next()){
-            current_num++;
-            if (current_num == id) {
-                String count = resultSet.getString("country");
-                String city = resultSet.getString("city");
+        while (resultSet.next()) {
+//            current_num++;
 
-                System.out.println(count + "-----" + city);
-                break;
-            }
+            String count = resultSet.getString("country");
+            String city = resultSet.getString("city");
+
+            System.out.println(count + "-----" + city);
+            break;
+
         }
 
     }
+
+
 
     public static void getData(Statement statement, Scanner scanner) throws SQLException {
         String query = "SELECT * FROM countries";
@@ -123,5 +125,4 @@ public class Main {
         }
     }
 }
-
 
